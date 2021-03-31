@@ -1,3 +1,8 @@
+const express = require("express");
+const Item = require("../item");
+const router = express.Router();
+
+
 // GET /items - this should render a list of shopping items.
 // Here is what a response looks like:
 
@@ -12,3 +17,5 @@ router.get('', (req, res, next) => {
       return next(err)
     }
   });
+
+module.exports = router;
