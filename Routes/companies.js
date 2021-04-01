@@ -46,3 +46,6 @@ Returns list of companies, like {companies: [{code, name}, ...]} */
       return next(err);
     }
   });
+
+
+  module.exports = router;
