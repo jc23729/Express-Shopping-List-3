@@ -46,6 +46,11 @@ Returns list of companies, like {companies: [{code, name}, ...]} */
       return next(err);
     }
   });
+/** GET /[code] => detail on company
+ *
+ * =>  {company: {code, name, descrip, invoices: [id, ...]}}
+ *
+ * */
 
 
   module.exports = router;
