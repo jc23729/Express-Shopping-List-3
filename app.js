@@ -6,7 +6,7 @@
 
 
  app.use(express.json());
- app.use("/companies", companiesRoutes);
+ app.use("/companies")
 
 
  /** 404 handler */
