@@ -1,3 +1,4 @@
+ // Biztime express aplication
  const express = require('express')
  const app = express();
  const itemsRoutes = require("./Routes/items")
@@ -5,7 +6,7 @@
 
 
  app.use(express.json());
- app.use("/items", itemsRoutes);
+
 
  /** 404 handler */
 

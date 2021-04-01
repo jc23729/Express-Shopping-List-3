@@ -1,4 +1,4 @@
-const items = require("./fakeDb")
+const items = require("./db")
 
 class Item {
     constructor(name, price) {
