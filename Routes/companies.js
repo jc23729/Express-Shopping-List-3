@@ -51,6 +51,28 @@ Returns list of companies, like {companies: [{code, name}, ...]} */
  * =>  {company: {code, name, descrip, invoices: [id, ...]}}
  *
  * */
+ router.get("/:code", async function (req, res, next) {
+  let code = req.params.code;
+  
+  const compResult = await db.query(
+    `SELECT code, name, description, invoices
+    FROM companies
+    WHERE code = $1`)
+    [code]
+  
+  try {
+    const result = await db.query(
+          `SELECT code, name 
+           FROM companies 
+           ORDER BY name`
+    );
 
+    return res.json({"companies": result.rows});
+  }
+
+  catch (err) {
+    return next(err);
+  }
+});
 
   module.exports = router;
