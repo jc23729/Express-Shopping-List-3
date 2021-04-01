@@ -1,11 +1,12 @@
  // Biztime express aplication
  const express = require('express')
  const app = express();
- const itemsRoutes = require("./Routes/items")
+//  const itemsRoutes = require("./Routes/items")
  const ExpressError = require("./expressError")
 
 
  app.use(express.json());
+ app.use("/companies", companiesRoutes);
 
 
  /** 404 handler */
