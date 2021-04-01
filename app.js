@@ -11,6 +11,7 @@
 
  app.use(function (req, res, next) {
      return new ExpressError("Not Found", 404);
+     return next(err);
  });
 
  /** general error handler */
@@ -19,7 +20,8 @@
      res.status(err.status || 500);
 
      return res.json({
-         error: err.message,
+         error: err,
+         message: err.message
      });
  });
 
