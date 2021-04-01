@@ -8,7 +8,8 @@
 
 
  app.use(express.json());
- app.use("/companies");
+ app.use("/companies", companiesRoutes);
+ app.use("/items", itemsRoutes);
 
 
  /** 404 handler */
