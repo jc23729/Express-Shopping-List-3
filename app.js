@@ -1,7 +1,9 @@
  // Biztime express aplication
  const express = require('express')
  const app = express();
-//  const itemsRoutes = require("./Routes/items")
+
+ const itemsRoutes = require("./Routes/items")
+ const companiesRoutes = require("./Routes/companies")
  const ExpressError = require("./expressError")
 
 
