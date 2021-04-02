@@ -98,22 +98,24 @@ router.get("/:code", async function (req, res, next) {
 // Needs to be given JSON like: {code, name, description}
 
 // Returns obj of new company: {company: {code, name, description}}
-  
-router.post("/:code", async function (req, res, next) {
-  try{
+
+router.post("/", async function (req, res, next) {
+  try {
     let {name, description} = req.body;
-    let code = slugify(name, { lower : true});
+    let code = slugify(name, {lower: true});
 
     const result = await db.query(
-      `INSERT INTO companies (code, name, description)
-      VALUES ($1, $2, $3)
-      RETURNING code, name, description`,
-    [code, name, description]);
+          `INSERT INTO companies (code, name, description) 
+           VALUES ($1, $2, $3) 
+           RETURNING code, name, description`,
+        [code, name, description]);
 
-    return res.status(201).json({"company": result.rows[0]})
+    return res.status(201).json({"company": result.rows[0]});
   }
+
   catch (err) {
     return next(err);
   }
-})
+});
+
   module.exports = router;
