@@ -92,7 +92,12 @@ router.get("/:code", async function (req, res, next) {
   }
 });
   
+// POST /companies
+// Adds a company.
 
+// Needs to be given JSON like: {code, name, description}
+
+// Returns obj of new company: {company: {code, name, description}}
   
 
   module.exports = router;
